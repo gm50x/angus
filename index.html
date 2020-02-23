@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS - Getting Started</title>
+    <link rel="shortcut icon" href="https://material.angularjs.org/latest/favicon.ico" type="image/x-icon">
+
+    <!-- Angular Cloak -->
+    <link rel="stylesheet" href="angular-app/angular-cloak.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- AngularJS Material Styles -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+
+</head>
+
+<body ng-app="angular-core" ng-cloak>
+    <md-content ng-controller="mainCtrl as ctrl" layout="column">
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-left" md-component-id="side-menu" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Menu</h1>
+                </md-toolbar>
+                <a layout="row" ng-repeat="menu in ctrl.menus" ng-click="ctrl.closeSidenav()" href="#!{{menu | lowercase}}">{{menu | lowercase}}</a>
+                <md-button ng-click="ctrl.closeSidenav()" class="md-primary">Close</md-button>
+                <p hide show-gt-md>
+                    This sidenav is locked open on your device. To go back to the default behaviour, narrow your display.
+                </p>
+            </md-sidenav>
+        </section>
+        <section layout="column" flex layout-padding>
+            <div flax="70">
+                <md-button ng-click="ctrl.openSidenav()" class="md-primary" hide-gt-md>
+                    <!-- <md-icon md-font-icon="ctrl.isMenuOpen ? 'menu_open': 'menu'"></md-icon> -->
+                    <md-icon>{{ctrl.isMenuOpen ? 'menu_open' : 'menu'}}</md-icon>
+                </md-button>
+            </div>
+        </section>
+        <section layout="row">
+            <app-calendar flex="50" date="ctrl.date"></app-calendar>
+            <md-content flex="20" ng-view>
+            </md-content>
+        </section>
+        <div>
+        </div>
+    </md-content>
+
+
+
+    <!-- AngularJS Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
+    <!-- Angular Modules -->
+    <script src="angular-app/angular-core.js"></script>
+    <script src="angular-app/angular-locale.js"></script>
+
+    <!-- Directives -->
+    <script src="angular-app/components/calendar/calendar.js"></script>
+</body>
+
+</html>
