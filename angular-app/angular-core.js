@@ -52,7 +52,6 @@ app.config(function($routeProvider) {
 })
 
 app.config(function($mdThemingProvider) {
-    console.log($mdThemingProvider)
     $mdThemingProvider.theme('default')
         .dark()
         .primaryPalette('neonRed')
