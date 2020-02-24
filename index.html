@@ -7,7 +7,7 @@
     <title>AngularJS - Getting Started</title>
     <link rel="shortcut icon" href="https://material.angularjs.org/latest/favicon.ico" type="image/x-icon">
 
-    <!-- Angular Cloak -->
+    <!-- Angular Cloak Style-->
     <link rel="stylesheet" href="angular-app/angular-cloak.css">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,17 +32,20 @@
         </section>
         <section layout="column" flex layout-padding>
             <div flax="70">
-                <md-button ng-click="ctrl.openSidenav()" class="md-primary" hide-gt-md>
-                    <!-- <md-icon md-font-icon="ctrl.isMenuOpen ? 'menu_open': 'menu'"></md-icon> -->
+                <md-button ng-click="ctrl.openSidenav()" hide-gt-md>
                     <md-icon>{{ctrl.isMenuOpen ? 'menu_open' : 'menu'}}</md-icon>
                 </md-button>
             </div>
         </section>
-        <section layout="row">
-            <app-calendar flex="50" date="ctrl.date"></app-calendar>
-            <app-calendar flex="50" date="ctrl.endDate"></app-calendar>
+        <section layout="row" layout-align="center center">
+            <app-calendar flex="50" date="ctrl.date" max-date="ctrl.maxDate" min-date="ctrl.minDate" enable-days-fn="ctrl.enableDaysFn"></app-calendar>
+            <!-- ROUTING EXAMPLE -->
             <md-content flex="20" ng-view>
             </md-content>
+        </section>
+        <section layout="row">
+            <p flex="50">{{ctrl.date}}</p>
+            <md-button class="md-raised md-primary">FOO</md-button>
         </section>
         <div>
         </div>
@@ -62,6 +65,8 @@
 
     <!-- Angular Modules -->
     <script src="angular-app/angular-core.js"></script>
+
+    <!-- Angular Locale (pt-BR) -->
     <script src="angular-app/angular-locale.js"></script>
 
     <!-- Directives -->

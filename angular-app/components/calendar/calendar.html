@@ -1,13 +1,15 @@
 <md-content layout-gt-sm="row" layout-padding="" ng-cloak="" class="datepickerdemoCalendar">
     <div layout="column" flex-order="1" flex-order-gt-sm="0">
-        <md-subheader>Selecione uma Data</md-subheader>
-        <md-calendar ng-model="date" md-max-date="maxDate" md-date-filter="isSelectable">
+        <md-subheader>
+            <p class="text-red">Selecione uma Data</p>
+        </md-subheader>
+        <md-calendar ng-model="date" md-max-date="maxDate" md-min-date="minDate" md-date-filter="enableDaysFn">
         </md-calendar>
     </div>
     <div layout="column " flex-order="0 " flex-order-gt-sm="2 ">
         <md-subheader>Data</md-subheader>
         <div>
-            <label>Data Selecioonada</label>
+            <label>Data Selecionada</label>
             <div>{{date | date:'medium'}}</div>
             <div>{{date | date:'shortDate'}}</div>
             <div>{{date | date}}</div>
@@ -17,7 +19,6 @@
             <div>{{date | date: 'hh:mm:ss a'}}</div>
             <div>{{date | date: 'H:mm:ss a'}}</div>
             <div>{{date | date: 'HH:mm:ss a'}}</div>
-
         </div>
     </div>
 </md-content>

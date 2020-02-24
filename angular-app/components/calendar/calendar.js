@@ -1,14 +1,16 @@
 angular.module('calendar', [])
-    .config(configureLocale)
+    .config(configureLocale) // COMMENT OUT FOR l10n
     .directive('appCalendar', function() {
         return {
             restrict: 'E',
-            scope: {},
+            scope: {
+                maxDate: '=maxDate',
+                minDate: '=',
+                date: '=',
+                enableDaysFn: '=',
+            },
             link: function(scope, element, attrs) {
-                /* ADDING RESTRICTIONS VIA LINK FUNCTION */
-                scope.date = getLastSelectableDate()
-                scope.maxDate = getYesterday()
-                scope.isSelectable = isSelectable
+                /* Add Behaviour Here */
             },
             templateUrl: 'angular-app/components/calendar/calendar.html'
         }
@@ -17,6 +19,7 @@ angular.module('calendar', [])
 
 /**
  * Behavioral Methods - Used to keep directive clear
+ * Remove for l10n
  */
 function configureLocale($mdDateLocaleProvider) {
     $mdDateLocaleProvider.months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
@@ -24,23 +27,4 @@ function configureLocale($mdDateLocaleProvider) {
     $mdDateLocaleProvider.days = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
     $mdDateLocaleProvider.shortDays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab']
     $mdDateLocaleProvider.firstDayOfWeek = 0
-}
-
-function isSelectable(date) {
-    return date.getDay() !== 0 && date.getDay() !== 6
-}
-
-function getLastSelectableDate() {
-    let yesterday = getYesterday()
-    if (yesterday.getDay() === 0) {
-        return new Date(yesterday.setDate(yesterday.getDate() - 2))
-    }
-
-    if (yesterday.getDay() === 6) {
-        return new Date(yesterday.setDate(yesterday.getDate() - 1))
-    }
-}
-
-function getYesterday() {
-    return new Date(new Date().setDate(new Date().getDate() - 1))
 }

@@ -1,4 +1,4 @@
-.md-default-theme .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,
+/* .md-default-theme .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,
 .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,
 .md-default-theme .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator,
 .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator {
@@ -27,6 +27,10 @@
     color: #FFF;
 }
 
-.datepickerdemoCalendar label {
-    font-size: x-small;
+.md-subheader .md-subheader-inner .md-subheader-content {
+    text-align: center !important;
 }
+
+.text-red {
+    color: red;
+} */
