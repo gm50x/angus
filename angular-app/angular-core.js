@@ -55,7 +55,7 @@ app.config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .dark()
         .primaryPalette('neonRed')
-        .accentPalette('foo')
+        .accentPalette('indigo')
 
     // EXTENDING THEMES
     const neonRedMap = $mdThemingProvider.extendPalette('red', {

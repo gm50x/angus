@@ -11,6 +11,8 @@ angular.module('calendar', [])
             },
             link: function(scope, element, attrs) {
                 /* Add Behaviour Here */
+                /* If you have to debug behaviours your can simple add breakpoints with debugger */
+                // debugger;
             },
             templateUrl: 'angular-app/components/calendar/calendar.html'
         }
