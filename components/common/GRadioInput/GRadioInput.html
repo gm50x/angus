@@ -1,0 +1,16 @@
+<span class="g-common">
+    <label for="{{$ctrl.ngValue}}" ng-class="{active: $ctrl.ngValue === $ctrl.ngModel, disabled: $ctrl.ngDisabled}">
+        <input 
+            type="radio" 
+            value="{{$ctrl.ngValue}}" 
+            id="{{$ctrl.ngValue}}" 
+            name="{{$ctrl.ngGroup}}" 
+            ng-model="$ctrl.ngModel"
+            ng-click="$ctrl.onClickRadioInput()"
+            ng-change="$ctrl.onStateChange()"
+            ng-class="{active: $ctrl.ngValue === $ctrl.ngModel}"
+            ng-disabled="$ctrl.ngDisabled">
+        {{$ctrl.ngDisplay}} {{$ctrl.state }}
+    </label>
+</span>
+<link rel="stylesheet" href="components/common/GRadioInput/GRadioInput.css">

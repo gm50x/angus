@@ -1,0 +1,19 @@
+.flex-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.bottom-text {
+    display: inline-block;
+    width: 100%;
+    max-width: 280px;
+}
