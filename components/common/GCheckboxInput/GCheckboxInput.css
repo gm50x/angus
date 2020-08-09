@@ -1,0 +1,46 @@
+.g-common input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid gray;
+    transition: 0.2s all linear;
+    background-clip: content-box;
+    position: relative;
+    top: 0.2vh;
+    margin-right: 0.3vh;
+    padding: 2px;
+}
+
+.g-common input[type="radio"]:disabled {
+    border-color: #ccc;
+}
+
+.g-common input[type="radio"]:checked {
+    border-color: black;
+    background-color: black;
+}
+
+.g-common input[type="radio"]:checked:disabled {
+    border-color: #ccc;
+    background-color: #ccc;
+}
+
+.g-common input[type="radio"]:focus {
+  outline:none;
+}
+
+.g-common label {
+
+    color: gray;
+}
+
+.g-common label.active {
+    color: black;
+}
+
+.g-common label.disabled {
+    color: #ccc;
+}

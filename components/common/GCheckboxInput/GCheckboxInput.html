@@ -1,0 +1,9 @@
+<span class="g-common">
+    <label for="{{$ctrl.ngValue}}" ng-class="{active: $ctrl.ngValue === $ctrl.ngModel, disabled: $ctrl.ngDisabled}">
+        <input type="checkbox" value="{{$ctrl.ngValue}}" id="{{$ctrl.ngValue}}" name="{{$ctrl.ngGroup}}"
+            ng-model="$ctrl.ngModel" ng-click="$ctrl.onClickCheckboxInput()" ng-change="$ctrl.onStateChange()"
+            ng-class="{active: $ctrl.ngValue === $ctrl.ngModel}" ng-disabled="$ctrl.ngDisabled">
+        {{$ctrl.ngDisplay}} {{$ctrl.state }}
+    </label>
+</span>
+<link rel="stylesheet" href="components/common/GCheckboxInput/GCheckboxInput.css">

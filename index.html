@@ -37,6 +37,13 @@
                     Wow! <strong>{{App.chosenFruit}} juice </strong>is one of my <i>favorites</i>!
                 </p>
             </div>
+            <div class="flex-rows">
+                <span ng-repeat="fruit in App.fruits">
+                    <g-checkbox-input ng-value="{{fruit.name}}" ng-display="{{fruit.name}}" ng-group="{{fruit.name}}"
+                        ng-model="App.favFruits[fruit.name]">
+                    </g-checkbox-input>
+                </span>
+            </div>
 
         </div>
     </div>
@@ -55,6 +62,8 @@
 
     <!-- Our Angular Components -->
     <script src="components/common/GRadioInput/GRadioInput.js"></script>
+    <script src="components/common/GCheckboxInput/GCheckboxInput.js"></script>
+
 </body>
 
 </html>
